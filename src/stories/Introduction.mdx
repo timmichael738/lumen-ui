@@ -1,0 +1,44 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# Lumen UI
+
+Accessible React components built to the
+[WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/). Every component works with a
+keyboard and a screen reader, ships with a visible focus ring, respects `prefers-reduced-motion`
+and `forced-colors`, and is themed with CSS variables.
+
+```bash
+# publish-ready; until it is on npm: npm run build && npm pack, then install the tarball
+npm install @timmichael738/lumen-ui
+```
+
+```tsx
+import { Button, Tabs, TabList, Tab, TabPanel } from '@timmichael738/lumen-ui';
+import '@timmichael738/lumen-ui/styles.css';
+```
+
+## Keyboard support
+
+| Component | Keys                                                                       |
+| --------- | -------------------------------------------------------------------------- |
+| Tabs      | ← → (or ↑ ↓ when vertical), Home, End; disabled tabs are skipped           |
+| Menu      | Enter / Space / ↓ open on first item, ↑ opens on last, typeahead, Esc, Tab |
+| Dialog    | Focus is trapped while open, Esc closes, focus returns to the trigger      |
+| Switch    | Space / Enter toggle                                                       |
+| Accordion | Enter / Space toggle; sections are real headings                           |
+| Tooltip   | Appears on focus as well as hover, Esc dismisses without moving focus      |
+
+## Theming
+
+Override any token on `:root` or a container:
+
+```css
+:root {
+  --lumen-accent: #7c3aed;
+  --lumen-radius: 4px;
+}
+```
+
+Use the **Accessibility** panel on each story to see the live axe-core audit.
